@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        
+    <link href="style.css" rel="stylesheet">
+    <!-- <script src="node_modules/angular/angular.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="MananciaisController.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Nossa Agua</title>
+</head>
+
+<body>
+    <div ng-app="app" ng-controller="mananciaisCtrl as ctrl" class="container" style="margin-bottom: 100px;">
+        <div class="jumbotron" style="background-color:transparent !important; margin-bottom: 5px;">
+            <h1 class="display-4">Monitoramento de Mananciais
+                <span>
+                    <img src="assets/logo.png" style="height: 150px; width: 230px;">
+                </span>
+            </h1>
+            <p class="lead">Acompanhe informações períodicas sobre os mananciais do estado de São Paulo.</p>
+            <hr class="my-4">
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <div class="card">
+                        <a class="card-header" data-toggle="collapse" href="#cantareira" role="button"
+                            aria-expanded="false" aria-controls="collapseExample"
+                            style="text-align: left; color: white; font-weight: bold;0 ">
+                            Cantareira
+                            <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                        </a>
+                        <div class="collapse" id="cantareira">
+                            <div class="card card-body">
+                                <h6>Volume armazenado: {{ctrl.cantareira.data[0].value}} </h6>
+                                <h6>Pluviometria do dia: {{ctrl.cantareira.data[1].value}}</h6>
+                                <h6>Pluviometria acumulada no mês: {{ctrl.cantareira.data[2].value}}</h6>
+                                <h6>Média histórica do mês: {{ctrl.cantareira.data[3].value}}</h6>
+                                <h6>Abastece: Região Metropolitana de São Paulo</h6>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <div class="card">
+                        <a class="card-header" data-toggle="collapse" href="#guarapiranga" role="button"
+                            aria-expanded="false" aria-controls="collapseExample"
+                            style="text-align: left; color: white; font-weight: bold;">
+                            Guarapiranga
+                            <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                        </a>
+                        <div class="collapse" id="guarapiranga">
+                            <div class="card card-body">
+                                <h6>Volume armazenado: {{ctrl.guarapiranga.data[0].value}} </h6>
+                                <h6>Pluviometria do dia: {{ctrl.guarapiranga.data[1].value}}</h6>
+                                <h6>Pluviometria acumulada no mês: {{ctrl.guarapiranga.data[2].value}}</h6>
+                                <h6>Média histórica do mês: {{ctrl.guarapiranga.data[3].value}}</h6>
+                                <h6>Abastece: Grande parte da zona sul e sudoeste da Grande São Paulo</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-body">
+                    <div class="card">
+                        <a class="card-header" data-toggle="collapse" href="#rioclaro" role="button"
+                            aria-expanded="false" aria-controls="collapseExample"
+                            style="text-align: left; color: white; font-weight: bold;">
+                            Rio Claro
+                            <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                        </a>
+                        <div class="collapse" id="rioclaro">
+                            <div class="card card-body">
+                                <h6>Volume armazenado: {{ctrl.rioClaro.data[0].value}} </h6>
+                                <h6>Pluviometria do dia: {{ctrl.rioClaro.data[1].value}}</h6>
+                                <h6>Pluviometria acumulada no mês: {{ctrl.rioClaro.data[2].value}}</h6>
+                                <h6>Média histórica do mês: {{ctrl.rioClaro.data[3].value}}</h6>
+                                <h6>Abastece: Parte da zona leste de são Paulo e o município de Santo André.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-body">
+                    <div class="card">
+                        <a class="card-header" data-toggle="collapse" href="#altoTiete" role="button"
+                            aria-expanded="false" aria-controls="collapseExample"
+                            style="text-align: left; color: white; font-weight: bold;">
+                            Alto Tiete
+                            <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                        </a>
+                        <div class="collapse" id="altoTiete">
+                            <div class="card card-body">
+                                <h6>Volume armazenado: {{ctrl.altoTiete.data[0].value}} </h6>
+                                <h6>Pluviometria do dia: {{ctrl.altoTiete.data[1].value}}</h6>
+                                <h6>Pluviometria acumulada no mês: {{ctrl.altoTiete.data[2].value}}</h6>
+                                <h6>Média histórica do mês: {{ctrl.altoTiete.data[3].value}}</h6>
+                                <h6>Abastece: Zona leste de São Paulo e dos municípios de Arujá, Itaquaquecetuba, Poá,
+                                    Ferraz de Vasconcelos
+                                    e Suzano, além de parte de Mogi das Cruzes e de Guarulhos.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card-body">
+                    <div>
+                        <div class="card">
+                            <a class="card-header" data-toggle="collapse" href="#cotia" role="button"
+                                aria-expanded="false" aria-controls="collapseExample"
+                                style="text-align: left; color: white; font-weight: bold;">
+                                Cotia
+                                <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                            </a>
+                            <div class="collapse" id="cotia">
+                                <div class="card card-body">
+                                    <h6>Volume armazenado: {{ctrl.cotia.data[0].value}} </h6>
+                                    <h6>Pluviometria do dia: {{ctrl.cotia.data[1].value}}</h6>
+                                    <h6>Pluviometria acumulada no mês: {{ctrl.cotia.data[2].value}}</h6>
+                                    <h6>Média histórica do mês: {{ctrl.cotia.data[3].value}}</h6>
+                                    <h6>Abastece: Cotia, Vargem Grande Paulista, Embu - Guaçu e parte de Embu</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-body">
+                    <div>
+                        <div class="card">
+                            <a class="card-header" data-toggle="collapse" href="#saoLourenco" role="button"
+                                aria-expanded="false" aria-controls="collapseExample"
+                                style="text-align: left; color: white; font-weight: bold;">
+                                São Lourenco
+                                <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                            </a>
+                            <div class="collapse" id="saoLourenco">
+                                <div class="card card-body">
+                                    <h6>Volume armazenado: {{ctrl.saoLourenco.data[0].value}} </h6>
+                                    <h6>Pluviometria do dia: {{ctrl.saoLourenco.data[1].value}}</h6>
+                                    <h6>Pluviometria acumulada no mês: {{ctrl.saoLourenco.data[2].value}}</h6>
+                                    <h6>Média histórica do mês: {{ctrl.saoLourenco.data[3].value}}</h6>
+                                    <h6>Abastece: Carapicuíba, Barueri, Jandira, Itapevi, Cotia, Vargem Grande Paulista
+                                        e Santana do Parnaíba.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card-body">
+                    <div>
+                        <div class="card">
+                            <a class="card-header" data-toggle="collapse" href="#rioGrande" role="button"
+                                aria-expanded="false" aria-controls="collapseExample"
+                                style="text-align: left; color: white; font-weight: bold;">
+                                Rio Grande
+                                <i class="fa fa-chevron-down" aria-hidden="true" style="float: right;"></i>
+                            </a>
+                            <div class="collapse" id="rioGrande">
+                                <div class="card card-body">
+                                    <h6>Volume armazenado: {{ctrl.rioGrande.data[0].value}} </h6>
+                                    <h6>Pluviometria do dia: {{ctrl.rioGrande.data[1].value}}</h6>
+                                    <h6>Pluviometria acumulada no mês: {{ctrl.rioGrande.data[2].value}}</h6>
+                                    <h6>Média histórica do mês: {{ctrl.rioGrande.data[3].value}}</h6>
+                                    <h6>Abastece: São Bernardo do Campo, Santo André e Diadema.</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer class="container-fluid bg-grey py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <div>
+                            </br>
+                            </br>
+                            <p id="slogan">Água, pode faltar. Economize!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div style="float: left;">
+                    <img src="assets/logo.png" class="logo-footer" style="height: 120px; width: 190px;">
+                </div>
+            </div>
+            <div class="col-md-4" style="border-left: 1px solid gray;">
+                </br>
+                <h6 style="font-size: small;"> Contato:
+                    <span>
+                        <a href="#">contato@nossaagua.com.br</a>
+                    </span>
+                </h6>
+                <div class="social">
+                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

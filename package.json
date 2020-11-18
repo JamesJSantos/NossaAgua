@@ -1,0 +1,17 @@
+{
+
+  "scripts": {
+    "dev": "lite-server"
+  },
+
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angularjs": "0.0.1",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+
+}
